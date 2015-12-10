@@ -31,3 +31,6 @@ end
 
 # Use Devise for user authentication with Warden
  gem 'devise'
+
+#Figaro handles sensitive data with environment variables
+ gem 'figaro', '1.0'
