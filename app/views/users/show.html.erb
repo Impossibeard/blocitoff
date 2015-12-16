@@ -1,1 +1,9 @@
-<h4>The email of this user is: <p><%= @user.email %></p></h4>
+<h2>User: <%= @user.email %></h2>
+
+<div>
+  <h3>Items</h3>
+  <%= render @items %>
+</div>
+<% if current_user %>
+  <%= render 'items/form', item: Item.new, user: @user %>
+<% end %>
