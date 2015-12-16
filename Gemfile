@@ -34,3 +34,6 @@ end
 
 #Figaro handles sensitive data with environment variables
  gem 'figaro', '1.0'
+
+#Faker handles random data seed creation
+ gem 'faker'
