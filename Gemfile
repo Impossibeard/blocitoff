@@ -16,6 +16,8 @@ source 'https://rubygems.org'
 
  group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda'
+  gem 'factory_girl_rails', '~>4.0'
 end
 
  # Use SCSS for stylesheets
@@ -31,6 +33,8 @@ end
 
 # Use Devise for user authentication with Warden
  gem 'devise'
+
+ gem 'bootstrap-sass'
 
 #Figaro handles sensitive data with environment variables
  gem 'figaro', '1.0'
