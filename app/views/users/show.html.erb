@@ -1,9 +1,11 @@
-<h2>User: <%= @user.username %></h2>
+<div class = "container">
+  <h2>User: <%= @user.username %></h2>
 
-<div>
-  <h3>Items</h3>
-  <%= render @items %>
+  <div>
+    <h3>Items</h3>
+    <%= render @items %>
+  </div>
+  <% if current_user %>
+    <%= render 'items/form', item: Item.new, user: @user %>
+  <% end %>
 </div>
-<% if current_user %>
-  <%= render 'items/form', item: Item.new, user: @user %>
-<% end %>

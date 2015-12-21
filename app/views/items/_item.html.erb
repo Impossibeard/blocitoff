@@ -1,5 +1,8 @@
-<div class="media">
-  <div class="media-body">
-    <p>You have to: <%= item.name %></p>
-  </div>
-</div>
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+  <div class="media">
+    <div class="media-body">
+      <p>You have to: <%= item.name %>
+        <%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></p>
+      </div>
+    </div>
+<% end %>
