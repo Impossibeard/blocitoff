@@ -3,7 +3,7 @@
     <div class="media-body">
       <h4><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %><%= item.name %>
         <small>
-            must be completed in <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>
+            expires in <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>
         </small>
       </h4>
     </div>
