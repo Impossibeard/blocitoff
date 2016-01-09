@@ -1,7 +1,7 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class="media">
     <div class="media-body">
-      <h4><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %><%= item.name %>
+      <h4><%= link_to "", user_item_toggle_path(item.user, item), method: :put, remote: true, class: "glyphicon glyphicon-#{item.completed ? 'ok' : 'unchecked'}"  %><%= item.name %>
         <small>
             expires in <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>
         </small>

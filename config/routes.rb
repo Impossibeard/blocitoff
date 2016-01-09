@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'welcome/about'
 
   resources :users, only: [:index, :show] do
-    resources :items, only: [:create, :destroy]
+    resources :items, only: [:create, :destroy] do
+      put :toggle
+    end
   end
 
   root 'users#index'

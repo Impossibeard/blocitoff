@@ -33,6 +33,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def toggle
+    #load item
+    #mark as complete/incomplete, save
+    #redirect
+
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:item_id])
+
+    @item.completed = !@item.completed
+
+    if @item.save
+      flash[:notice] = "\"#{@item.name}\" was updated!"
+    else
+      flash[:error] = "There was an error updating the task."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:name)

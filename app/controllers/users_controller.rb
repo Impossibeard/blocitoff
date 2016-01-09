@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @items = @user.items.all
+    @items = @user.items
 
-    @item = @user.items.new
+    @item = Item.new
   end
 end
